@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+vector<bool> isprime(N,1);
+void sieve(){                 // N * log(log(N));
+	isprime[0]=isprime[1]=false;
+	for(ll i=0;i<N;i++)
+	{
+		if(isprime[i])
+		{
+			for(ll j=2*i;j<N;j+=i)
+			{
+				isprime[j]=false;
+			}
+		}
+	}
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sieve</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

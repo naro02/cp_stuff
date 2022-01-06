@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+vector<bool> isprime(N,1);
+vll hp(N,0) , lp(N,0);
+void sieve(){                 // N * log(log(N));
+	isprime[0]=isprime[1]=false;
+	for(ll i=0;i<N;i++)
+	{
+		if(isprime[i])
+		{
+			lp[i]=hp[i]=i;
+			for(ll j=2*i;j<N;j+=i)
+			{
+				isprime[j]=false;
+				hp[j]=i;
+				if(lp[j]==0) lp[j]=i;
+			}
+		}
+	}
+	// setll se;  while(n!=1)  se.insert(lp[n]) , n/=lp[n];  prime factorisation
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sieve_1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
